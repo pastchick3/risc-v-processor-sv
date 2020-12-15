@@ -1,322 +1,207 @@
 module Processor (
     input clk,
-    output reg done = 0
+    output logic done = 0
 );
-    // The program counter
-    reg [5:0] pc = 0;
+    logic [5:0] pc = '0;
+    logic stall_flag = 0;
+    logic branch_flag = 0;
 
-    // Control signals from the instruction decoder
-    wire [31:0] inst;
-    wire reg_write_enable;
-    wire [4:0] reg_read_addr_1;
-    wire [4:0] reg_read_addr_2;
-    wire [4:0] reg_write_addr;
-    wire data_write_enable;
-    wire [4:0] data_read_addr;
-    wire [4:0] data_write_addr;
-    wire [1:0] alu_ctrl;
-    wire reg_write_select;
-    wire [1:0] branch;
-    wire branch_direction;
-    wire [4:0] branch_offset;
-    
-    // Signals used by other computing and memory modules
-    wire [7:0] reg_read_data_1;
-    wire [7:0] reg_read_data_2;
-    wire [7:0] data_read_data;
-    wire [7:0] alu_out;
-    wire [7:0] reg_write_mux_out;
-    wire zero;
-
-    // IF/ID pipeline registers
-    reg [5:0] if_id_pc = 0;
-    reg [31:0] if_id_inst = 0;
-
-    // ID/EX pipeline registers
-    reg [5:0] id_ex_pc = 0;
-    reg [4:0] id_ex_reg_read_addr_1 = 0;
-    reg [4:0] id_ex_reg_read_addr_2 = 0;
-    reg [7:0] id_ex_reg_read_data_1 = 0;
-    reg [7:0] id_ex_reg_read_data_2 = 0;
-    reg id_ex_reg_write_enable = 0;
-    reg [4:0] id_ex_reg_write_addr = 0;
-    reg id_ex_data_write_enable = 0;
-    reg [4:0] id_ex_data_read_addr = 0;
-    reg [4:0] id_ex_data_write_addr = 0;
-    reg [1:0] id_ex_alu_ctrl = 0;
-    reg id_ex_reg_write_select = 0;
-    reg [1:0] id_ex_branch = 0;
-    reg id_ex_branch_direction = 0;
-    reg [4:0] id_ex_branch_offset = 0;
-
-    // EX/MEM pipeline registers
-    reg [7:0] ex_mem_reg_read_data_2 = 0;
-    reg ex_mem_reg_write_enable = 0;
-    reg [4:0] ex_mem_reg_write_addr = 0;
-    reg ex_mem_data_write_enable = 0;
-    reg [4:0] ex_mem_data_read_addr = 0;
-    reg [4:0] ex_mem_data_write_addr = 0;
-    reg ex_mem_reg_write_select = 0;
-    reg [7:0] ex_mem_alu_out = 0;
-    reg ex_mem_zero = 0;
-    reg [5:0] ex_mem_pc = 0;
-    reg [1:0] ex_mem_branch = 0;
-    reg ex_mem_branch_direction = 0;
-    reg [4:0] ex_mem_branch_offset = 0;
-
-    // MEM/WB pipeline registers
-    reg mem_wb_reg_write_enable = 0;
-    reg [4:0] mem_wb_reg_write_addr = 0;
-    reg mem_wb_reg_write_select = 0;
-    reg [7:0] mem_wb_alu_out = 0;
-    reg [7:0] mem_wb_data_read_data = 0;
-
-    // WB pipeline registers (see `README.md` for more infomation)
-    reg [7:0] wb_reg_write_mux_out = 0;
-    reg wb_reg_write_enable = 0;
-    reg [4:0] wb_reg_write_addr = 0;
-
-    // Data hazards control signals
-    wire [1:0] forward_1;
-    wire [1:0] forward_2;
-    wire stall;
-    wire [7:0] alu_in_1_mux_out;
-    wire [7:0] alu_in_2_mux_out;
-
-    Decoder decoder (
-        .inst(if_id_inst),
-        .reg_write_enable(reg_write_enable),
-        .reg_read_addr_1(reg_read_addr_1),
-        .reg_read_addr_2(reg_read_addr_2),
-        .reg_write_addr(reg_write_addr),
-        .data_write_enable(data_write_enable),
-        .data_read_addr(data_read_addr),
-        .data_write_addr(data_write_addr),
-        .alu_ctrl(alu_ctrl),
-        .reg_write_select(reg_write_select),
-        .branch(branch),
-        .branch_direction(branch_direction),
-        .branch_offset(branch_offset)
+    // IF Stage
+    InstMemIntf inst_mem_intf (
+        .addr(pc[4:0])
     );
+    InstMem inst_mem (inst_mem_intf);
 
-    InstMem inst_mem (
-        .addr(pc[4:0]),
-        .inst(inst)
-    );
-
-    Register register (
+    IfRegIntf if_reg_intf (
         .clk(clk),
-        .write_enable(mem_wb_reg_write_enable),
-        .read_addr_1(reg_read_addr_1),
-        .read_addr_2(reg_read_addr_2),
-        .write_addr(mem_wb_reg_write_addr),
-        .write_data(reg_write_mux_out),
-        .read_data_1(reg_read_data_1),
-        .read_data_2(reg_read_data_2)
+        .branch_flag(branch_flag),
+        .stall_flag(stall_flag),
+        .pc(pc[4:0]),
+        .inst(inst_mem_intf.inst)
     );
+    IfReg if_reg (if_reg_intf);
 
-    DataMem data_mem (
+    // ID Stage
+    DecoderIntf decoder_intf (
+        .inst(if_reg_intf.reg_inst)
+    );
+    Decoder decoder (decoder_intf);
+
+    logic mem_reg_intf_reg_write_enable;
+    logic [4:0] mem_reg_intf_reg_write_addr;
+    logic [7:0] reg_write_mux_out;
+    RegMemIntf reg_mem_intf (
         .clk(clk),
-        .write_enable(ex_mem_data_write_enable),
-        .read_addr(ex_mem_data_read_addr),
-        .write_addr(ex_mem_data_write_addr),
-        .write_data(ex_mem_reg_read_data_2),
-        .read_data(data_read_data)
+        .write_enable(mem_reg_intf_reg_write_enable),
+        .read_addr_1(decoder_intf.reg_read_addr_1),
+        .read_addr_2(decoder_intf.reg_read_addr_2),
+        .write_addr(mem_reg_intf_reg_write_addr),
+        .write_data(reg_write_mux_out)
     );
+    RegMem reg_mem (reg_mem_intf);
 
-    Mux2 reg_write_mux (
-        .select(mem_wb_reg_write_select),
-        .in_1(mem_wb_data_read_data),
-        .in_2(mem_wb_alu_out),
-        .out(reg_write_mux_out)
+    IdRegIntf id_reg_intf (
+        .clk(clk),
+        .branch_flag(branch_flag),
+        .stall_flag(stall_flag),
+        .pc(if_reg_intf.reg_pc),
+        .reg_read_addr_1(decoder_intf.reg_read_addr_1),
+        .reg_read_addr_2(decoder_intf.reg_read_addr_2),
+        .read_data_1(reg_mem_intf.read_data_1),
+        .read_data_2(reg_mem_intf.read_data_2),
+        .reg_write_enable(decoder_intf.reg_write_enable),
+        .reg_write_addr(decoder_intf.reg_write_addr),
+        .data_write_enable(decoder_intf.data_write_enable),
+        .data_read_addr(decoder_intf.data_read_addr),
+        .data_write_addr(decoder_intf.data_write_addr),
+        .alu_ctrl(decoder_intf.alu_ctrl),
+        .reg_write_select(decoder_intf.reg_write_select),
+        .branch(decoder_intf.branch),
+        .branch_direction(decoder_intf.branch_direction),
+        .branch_offset(decoder_intf.branch_offset)
     );
+    IdReg id_reg (id_reg_intf);
 
+    // EX Stage
+    logic [1:0] forward_1;
+    logic [1:0] forward_2;
+    logic [7:0] alu_out;
+    logic zero;
+    logic [7:0] alu_in_1_mux_out;
+    logic [7:0] alu_in_2_mux_out;
+    logic [7:0] wb_reg_intf_reg_reg_write_mux_out;
     Mux4 alu_in_1_mux (
         .select(forward_1),
-        .in_1(id_ex_reg_read_data_1),
-        .in_2(ex_mem_alu_out),
+        .in_1(id_reg_intf.reg_reg_read_data_1),
+        .in_2(ex_reg_intf.reg_alu_out),
         .in_3(reg_write_mux_out),
-        .in_4(wb_reg_write_mux_out),
+        .in_4(wb_reg_intf_reg_reg_write_mux_out),
         .out(alu_in_1_mux_out)
     );
-
     Mux4 alu_in_2_mux (
         .select(forward_2),
-        .in_1(id_ex_reg_read_data_2),
-        .in_2(ex_mem_alu_out),
+        .in_1(id_reg_intf.reg_reg_read_data_2),
+        .in_2(ex_reg_intf.reg_alu_out),
         .in_3(reg_write_mux_out),
-        .in_4(wb_reg_write_mux_out),
+        .in_4(wb_reg_intf_reg_reg_write_mux_out),
         .out(alu_in_2_mux_out)
     );
-
     ALU alu (
-        .ctrl(id_ex_alu_ctrl),
+        .ctrl(id_reg_intf.reg_alu_ctrl),
         .in_1(alu_in_1_mux_out),
         .in_2(alu_in_2_mux_out),
         .out(alu_out),
         .zero(zero)
     );
 
-    DataHazardCtrl data_hazard_ctrl (
+    ExRegIntf ex_reg_intf (
         .clk(clk),
-        .ex_mem_reg_write_enable(ex_mem_reg_write_enable),
-        .ex_mem_reg_write_addr(ex_mem_reg_write_addr),
-        .mem_wb_reg_write_enable(mem_wb_reg_write_enable),
-        .mem_wb_reg_write_addr(mem_wb_reg_write_addr),
-        .wb_reg_write_enable(wb_reg_write_enable),
-        .wb_reg_write_addr(wb_reg_write_addr),
-        .id_ex_reg_read_addr_1(id_ex_reg_read_addr_1),
-        .id_ex_reg_read_addr_2(id_ex_reg_read_addr_2),
-        .id_ex_reg_write_enable(id_ex_reg_write_enable),
-        .id_ex_reg_write_select(id_ex_reg_write_select),
-        .id_ex_reg_write_addr(id_ex_reg_write_addr),
-        .if_id_inst(if_id_inst),
-        .forward_1(forward_1),
-        .forward_2(forward_2),
-        .stall(stall)
+        .branch_flag(branch_flag),
+        .stall_flag(stall_flag),
+        .alu_in_1_mux_out(alu_in_1_mux_out),
+        .alu_in_2_mux_out(alu_in_2_mux_out),
+        .reg_write_enable(id_reg_intf.reg_reg_write_enable),
+        .reg_write_addr(id_reg_intf.reg_reg_write_addr),
+        .data_write_enable(id_reg_intf.reg_data_write_enable),
+        .data_read_addr(id_reg_intf.reg_data_read_addr),
+        .data_write_addr(id_reg_intf.reg_data_write_addr),
+        .reg_write_select(id_reg_intf.reg_reg_write_select),
+        .alu_out(alu_out),
+        .zero(zero),
+        .pc(id_reg_intf.reg_pc),
+        .branch(id_reg_intf.reg_branch),
+        .branch_direction(id_reg_intf.reg_branch_direction),
+        .branch_offset(id_reg_intf.reg_branch_offset)
+    );
+    ExReg ex_reg (ex_reg_intf);
+
+    // MEM Stage
+    DataMemIntf data_mem_intf (
+        .clk(clk),
+        .write_enable(ex_reg_intf.reg_data_write_enable),
+        .read_addr(ex_reg_intf.reg_data_read_addr),
+        .write_addr(ex_reg_intf.reg_data_write_addr),
+        .write_data(ex_reg_intf.reg_reg_read_data_2)
+    );
+    DataMem data_mem (data_mem_intf);
+
+    MemRegIntf mem_reg_intf (
+        .clk(clk),
+        .reg_write_enable(ex_reg_intf.reg_reg_write_enable),
+        .reg_write_addr(ex_reg_intf.reg_reg_write_addr),
+        .reg_write_select(ex_reg_intf.reg_reg_write_select),
+        .alu_out(ex_reg_intf.reg_alu_out),
+        .data_read_data(data_mem_intf.read_data)
+    );
+    MemReg mem_reg (mem_reg_intf);
+    assign mem_reg_intf_reg_write_enable = mem_reg_intf.reg_reg_write_enable;
+    assign mem_reg_intf_reg_write_addr = mem_reg_intf.reg_reg_write_addr;
+
+    // WB Stage
+    Mux2 reg_write_mux (
+        .select(mem_reg_intf.reg_reg_write_select),
+        .in_1(mem_reg_intf.reg_data_read_data),
+        .in_2(mem_reg_intf.reg_alu_out),
+        .out(reg_write_mux_out)
     );
 
-    always @(posedge clk) begin
-        if (pc > 31) begin
-            done <= 1;    
-        end
+    WbRegIntf wb_reg_intf (
+        .clk(clk),
+        .reg_write_mux_out(reg_write_mux_out),
+        .reg_write_enable(mem_reg_intf.reg_reg_write_enable),
+        .reg_write_addr(mem_reg_intf.reg_reg_write_addr)
+    );
+    WbReg wb_reg (wb_reg_intf);
+    assign wb_reg_intf_reg_reg_write_mux_out = wb_reg_intf.reg_reg_write_mux_out;
 
-        // The program counter is updated at the very beginning of
-        // each clock cycle to make sure every signal and register
-        // from the last clock cycle is stable.
-        if ((ex_mem_branch == 1 && ex_mem_zero) || (ex_mem_branch == 2 && ex_mem_alu_out >= 128)) begin
-            // Branch to a new instruction.
-            if (ex_mem_branch_direction == 0) begin
-                pc <= ex_mem_pc + ex_mem_branch_offset;
-            end else begin
-                pc <= ex_mem_pc - ex_mem_branch_offset;
-            end
+    // Data Hazards
+    DataHazardCtrl data_hazard_ctrl (
+        .clk(clk),
+        .ex_reg_write_enable(ex_reg_intf.reg_reg_write_enable),
+        .ex_reg_write_addr(ex_reg_intf.reg_reg_write_addr),
+        .mem_reg_write_enable(mem_reg_intf.reg_reg_write_enable),
+        .mem_reg_write_addr(mem_reg_intf.reg_reg_write_addr),
+        .wb_reg_write_enable(wb_reg_intf.reg_reg_write_enable),
+        .wb_reg_write_addr(wb_reg_intf.reg_reg_write_addr),
+        .id_reg_read_addr_1(id_reg_intf.reg_reg_read_addr_1),
+        .id_reg_read_addr_2(id_reg_intf.reg_reg_read_addr_2),
+        .id_reg_write_enable(id_reg_intf.reg_reg_write_enable),
+        .id_reg_write_select(id_reg_intf.reg_reg_write_select),
+        .id_reg_write_addr(id_reg_intf.reg_reg_write_addr),
+        .if_inst(if_reg_intf.reg_inst),
+        .forward_1(forward_1),
+        .forward_2(forward_2),
+        .stall_flag(stall_flag)
+    );
 
-            // Flush IF/ID pipeline registers.        
-            if_id_pc <= 0;
-            if_id_inst <= 0;
-
-            // Flush ID/EX pipeline registers.
-            id_ex_pc <= 0;
-            id_ex_reg_read_addr_1 <= 0;
-            id_ex_reg_read_addr_2 <= 0;
-            id_ex_reg_read_data_1 <= 0;
-            id_ex_reg_read_data_2 <= 0;
-            id_ex_reg_write_enable <= 0;
-            id_ex_reg_write_addr <= 0;
-            id_ex_data_write_enable <= 0;
-            id_ex_data_read_addr <= 0;
-            id_ex_data_write_addr <= 0;
-            id_ex_alu_ctrl <= 0;
-            id_ex_reg_write_select <= 0;
-            id_ex_branch <= 0;
-            id_ex_branch_direction <= 0;
-            id_ex_branch_offset <= 0;
-
-            // Flush EX/MEM pipeline registers.
-            ex_mem_reg_read_data_2 <= 0;
-            ex_mem_reg_write_enable <= 0;
-            ex_mem_reg_write_addr <= 0;
-            ex_mem_data_write_enable <= 0;
-            ex_mem_data_read_addr <= 0;
-            ex_mem_data_write_addr <= 0;
-            ex_mem_reg_write_select <= 0;
-            ex_mem_alu_out <= 0;
-            ex_mem_zero <= 0;
-            ex_mem_pc <= 0;
-            ex_mem_branch <= 0;
-            ex_mem_branch_direction <= 0;
-            ex_mem_branch_offset <= 0;
-        end else if (stall) begin
-            // Stall the pipeline.
-            pc <= pc;
-
-            // Stall IF/ID pipeline registers. 
-            if_id_pc <= if_id_pc;
-            if_id_inst <= if_id_inst;
-
-            // Flush ID/EX pipeline registers.
-            id_ex_pc <= 0;
-            id_ex_reg_read_addr_1 <= 0;
-            id_ex_reg_read_addr_2 <= 0;
-            id_ex_reg_read_data_1 <= 0;
-            id_ex_reg_read_data_2 <= 0;
-            id_ex_reg_write_enable <= 0;
-            id_ex_reg_write_addr <= 0;
-            id_ex_data_write_enable <= 0;
-            id_ex_data_read_addr <= 0;
-            id_ex_data_write_addr <= 0;
-            id_ex_alu_ctrl <= 0;
-            id_ex_reg_write_select <= 0;
-            id_ex_branch <= 0;
-            id_ex_branch_direction <= 0;
-            id_ex_branch_offset <= 0;
-
-            // Load EX/MEM pipeline registers.
-            ex_mem_reg_read_data_2 <= alu_in_2_mux_out; // forwarded data
-            ex_mem_reg_write_enable <= id_ex_reg_write_enable;
-            ex_mem_reg_write_addr <= id_ex_reg_write_addr;
-            ex_mem_data_write_enable <= id_ex_data_write_enable;
-            ex_mem_data_read_addr <= id_ex_data_read_addr + alu_in_1_mux_out;
-            ex_mem_data_write_addr <= id_ex_data_write_addr + alu_in_1_mux_out;
-            ex_mem_reg_write_select <= id_ex_reg_write_select;
-            ex_mem_alu_out <= alu_out;
-            ex_mem_zero <= zero;
-            ex_mem_pc <= id_ex_pc;
-            ex_mem_branch <= id_ex_branch;
-            ex_mem_branch_direction <= id_ex_branch_direction;
-            ex_mem_branch_offset <= id_ex_branch_offset;
+    // Compute the branch flag.
+    always_comb begin
+        if ((ex_reg_intf.reg_branch == 1 && ex_reg_intf.reg_zero)
+            || (ex_reg_intf.reg_branch == 2 && ex_reg_intf.reg_alu_out >= 128)) begin
+            branch_flag = 1;
         end else begin
-            // Advance to the next instruction.
-            pc <= pc + 1;
+            branch_flag = 0;
+        end
+    end
 
-            // Load IF/ID pipeline registers.        
-            if_id_pc <= pc;
-            if_id_inst <= inst;
-
-            // Load ID/EX pipeline registers.
-            id_ex_pc <= if_id_pc;
-            id_ex_reg_read_addr_1 <= reg_read_addr_1;
-            id_ex_reg_read_addr_2 <= reg_read_addr_2;
-            id_ex_reg_read_data_1 <= reg_read_data_1;
-            id_ex_reg_read_data_2 <= reg_read_data_2;
-            id_ex_reg_write_enable <= reg_write_enable;
-            id_ex_reg_write_addr <= reg_write_addr;
-            id_ex_data_write_enable <= data_write_enable;
-            id_ex_data_read_addr <= data_read_addr;
-            id_ex_data_write_addr <= data_write_addr;
-            id_ex_alu_ctrl <= alu_ctrl;
-            id_ex_reg_write_select <= reg_write_select;
-            id_ex_branch <= branch;
-            id_ex_branch_direction <= branch_direction;
-            id_ex_branch_offset <= branch_offset;
-
-            // Load EX/MEM pipeline registers.
-            ex_mem_reg_read_data_2 <= alu_in_2_mux_out; // forwarded data
-            ex_mem_reg_write_enable <= id_ex_reg_write_enable;
-            ex_mem_reg_write_addr <= id_ex_reg_write_addr;
-            ex_mem_data_write_enable <= id_ex_data_write_enable;
-            ex_mem_data_read_addr <= id_ex_data_read_addr + alu_in_1_mux_out;
-            ex_mem_data_write_addr <= id_ex_data_write_addr + alu_in_1_mux_out;
-            ex_mem_reg_write_select <= id_ex_reg_write_select;
-            ex_mem_alu_out <= alu_out;
-            ex_mem_zero <= zero;
-            ex_mem_pc <= id_ex_pc;
-            ex_mem_branch <= id_ex_branch;
-            ex_mem_branch_direction <= id_ex_branch_direction;
-            ex_mem_branch_offset <= id_ex_branch_offset;
+    // Advance the program counter.
+    always_ff @(posedge clk) begin
+        if (pc > 31) begin
+            done <= 1;
+        end else begin
+            done <= 0;
         end
 
-        // Load MEM/WB pipeline registers.
-        mem_wb_reg_write_enable <= ex_mem_reg_write_enable;
-        mem_wb_reg_write_addr <= ex_mem_reg_write_addr;
-        mem_wb_reg_write_select <= ex_mem_reg_write_select;
-        mem_wb_alu_out <= ex_mem_alu_out;
-        mem_wb_data_read_data <= data_read_data;
-
-        // Load WB pipeline registers.
-        wb_reg_write_mux_out <= reg_write_mux_out;
-        wb_reg_write_enable = mem_wb_reg_write_enable;
-        wb_reg_write_addr = mem_wb_reg_write_addr;
+        if (branch_flag) begin
+            if (ex_reg_intf.reg_branch_direction == 0) begin
+                pc <= ex_reg_intf.reg_pc + ex_reg_intf.reg_branch_offset;
+            end else begin
+                pc <= ex_reg_intf.reg_pc - ex_reg_intf.reg_branch_offset;
+            end
+        end else if (stall_flag) begin
+            pc <= pc;
+        end else begin
+            pc <= pc + 1;
+        end
     end
 endmodule

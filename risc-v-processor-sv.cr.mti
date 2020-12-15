@@ -1,30 +1,35 @@
-C:/Users/33160/Desktop/risc-v-processor-sv/DataMem.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/DataMem.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module DataMem
-
-Top level modules:
-	DataMem
-
-} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/InstMem.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/InstMem.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module InstMem
-
-Top level modules:
-	InstMem
-
-} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Register.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Register.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Register
-
-Top level modules:
-	Register
-
-} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/DataHazardCtrl.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/DataHazardCtrl.sv
+C:/Users/33160/Desktop/risc-v-processor-sv/DataHazardCtrl.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/DataHazardCtrl.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module DataHazardCtrl
 
 Top level modules:
 	DataHazardCtrl
+
+} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Interface.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Interface.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling interface InstMemIntf
+-- Compiling interface RegMemIntf
+-- Compiling interface DataMemIntf
+-- Compiling interface DecoderIntf
+-- Compiling interface IfRegIntf
+-- Compiling interface IdRegIntf
+-- Compiling interface ExRegIntf
+-- Compiling interface MemRegIntf
+-- Compiling interface WbRegIntf
+
+Top level modules:
+	--none--
+
+} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Memory.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Memory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstMem
+-- Compiling module RegMem
+-- Compiling module DataMem
+
+Top level modules:
+	InstMem
+	RegMem
+	DataMem
 
 } {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Decoder.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Decoder.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -33,11 +38,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Decoder
 
-} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Mux4.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Mux4.sv
+} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Mux.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Mux.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux2
 -- Compiling module Mux4
 
 Top level modules:
+	Mux2
 	Mux4
 
 } {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/ALU.sv
@@ -47,12 +54,27 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ALU
 
-} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Processor.sv {1 {vlog -work work -sv -stats=none {C:\Users\33160\Desktop\risc-v-processor-sv\Processor.sv}
+} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Processor.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Processor.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Processor
 
 Top level modules:
 	Processor
+
+} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/PipelineReg.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/PipelineReg.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IfReg
+-- Compiling module IdReg
+-- Compiling module ExReg
+-- Compiling module MemReg
+-- Compiling module WbReg
+
+Top level modules:
+	IfReg
+	IdReg
+	ExReg
+	MemReg
+	WbReg
 
 } {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Driver.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Driver.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -60,12 +82,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	Driver
-
-} {} {}} C:/Users/33160/Desktop/risc-v-processor-sv/Mux2.sv {1 {vlog -work work -sv -stats=none C:/Users/33160/Desktop/risc-v-processor-sv/Mux2.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Mux2
-
-Top level modules:
-	Mux2
 
 } {} {}}

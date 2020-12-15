@@ -1,73 +1,73 @@
 module DataHazardCtrl (
     input clk,
-    input ex_mem_reg_write_enable,
-    input [4:0] ex_mem_reg_write_addr,
-    input mem_wb_reg_write_enable,
-    input [4:0] mem_wb_reg_write_addr,
+    input ex_reg_write_enable,
+    input [4:0] ex_reg_write_addr,
+    input mem_reg_write_enable,
+    input [4:0] mem_reg_write_addr,
     input wb_reg_write_enable,
     input [4:0] wb_reg_write_addr,
-    input [4:0] id_ex_reg_read_addr_1,
-    input [4:0] id_ex_reg_read_addr_2,
-    input id_ex_reg_write_enable,
-    input id_ex_reg_write_select,
-    input [4:0] id_ex_reg_write_addr,
-    input [31:0] if_id_inst,
+    input [4:0] id_reg_read_addr_1,
+    input [4:0] id_reg_read_addr_2,
+    input id_reg_write_enable,
+    input id_reg_write_select,
+    input [4:0] id_reg_write_addr,
+    input [31:0] if_inst,
     output reg [1:0] forward_1,
     output reg [1:0] forward_2,
-    output reg stall
+    output reg stall_flag
 );
-    always @(*) begin
+    always_comb begin
         // ALU input 1
-        if (ex_mem_reg_write_enable
-            && (ex_mem_reg_write_addr != 0)
-            && (ex_mem_reg_write_addr == id_ex_reg_read_addr_1)) begin
+        if (ex_reg_write_enable
+            && (ex_reg_write_addr != 0)
+            && (ex_reg_write_addr == id_reg_read_addr_1)) begin
             // EX hazard
-            forward_1 = 2'b01;
-        end else if (mem_wb_reg_write_enable
-            && (mem_wb_reg_write_addr != 0)
-            && (mem_wb_reg_write_addr == id_ex_reg_read_addr_1)) begin
+            forward_1 = 1;
+        end else if (mem_reg_write_enable
+            && (mem_reg_write_addr != 0)
+            && (mem_reg_write_addr == id_reg_read_addr_1)) begin
             // MEM hazard
-            forward_1 = 2'b10;
+            forward_1 = 2;
         end else if (wb_reg_write_enable
             && (wb_reg_write_addr != 0)
-            && (wb_reg_write_addr == id_ex_reg_read_addr_1)) begin
+            && (wb_reg_write_addr == id_reg_read_addr_1)) begin
             // WB hazard
-            forward_1 = 2'b11;
+            forward_1 = 3;
         end else begin
             // No hazard
-            forward_1 = 2'b00;
+            forward_1 = 0;
         end
 
         // ALU input 2
-        if (ex_mem_reg_write_enable
-            && (ex_mem_reg_write_addr != 0)
-            && (ex_mem_reg_write_addr == id_ex_reg_read_addr_2)) begin
+        if (ex_reg_write_enable
+            && (ex_reg_write_addr != 0)
+            && (ex_reg_write_addr == id_reg_read_addr_2)) begin
             // EX hazard
-            forward_2 = 2'b01;
-        end else if (mem_wb_reg_write_enable
-            && (mem_wb_reg_write_addr != 0)
-            && (mem_wb_reg_write_addr == id_ex_reg_read_addr_2)) begin
+            forward_2 = 1;
+        end else if (mem_reg_write_enable
+            && (mem_reg_write_addr != 0)
+            && (mem_reg_write_addr == id_reg_read_addr_2)) begin
             // MEM hazard
-            forward_2 = 2'b10;
+            forward_2 = 2;
         end else if (wb_reg_write_enable
             && (wb_reg_write_addr != 0)
-            && (wb_reg_write_addr == id_ex_reg_read_addr_2)) begin
+            && (wb_reg_write_addr == id_reg_read_addr_2)) begin
             // WB hazard
-            forward_2 = 2'b11;
+            forward_2 = 3;
         end else begin
             // No hazard
-            forward_2 = 2'b00;
+            forward_2 = 0;
         end
 
         // Stall the pipeline if there is an instruction that reads a
         // register following a load instruction that operates on the
         // same register.
-        if ((id_ex_reg_write_enable && !id_ex_reg_write_select)
-            && ((id_ex_reg_write_addr == if_id_inst[19:15])
-            || (id_ex_reg_write_addr == if_id_inst[24:20]))) begin
-            stall = 1;
+        if ((id_reg_write_enable && !id_reg_write_select)
+            && ((id_reg_write_addr == if_inst[19:15])
+            || (id_reg_write_addr == if_inst[24:20]))) begin
+            stall_flag = 1;
         end else begin
-            stall = 0;
+            stall_flag = 0;
         end
     end
 endmodule
