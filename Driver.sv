@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
 
 module Driver ();
-    logic clk;
+    logic clk = 1;
     logic done;
 
     Processor processor (
@@ -10,12 +10,9 @@ module Driver ();
     );
 
     initial begin
-        clk <= 1;
         forever begin
             #5 clk <= ~clk;
-            if (done) begin
-                break;
-            end
+            if (done) break;
         end
     end
 endmodule

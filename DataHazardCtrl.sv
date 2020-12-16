@@ -1,63 +1,44 @@
-module DataHazardCtrl (
-    input clk,
-    input ex_reg_write_enable,
-    input [4:0] ex_reg_write_addr,
-    input mem_reg_write_enable,
-    input [4:0] mem_reg_write_addr,
-    input wb_reg_write_enable,
-    input [4:0] wb_reg_write_addr,
-    input [4:0] id_reg_read_addr_1,
-    input [4:0] id_reg_read_addr_2,
-    input id_reg_write_enable,
-    input id_reg_write_select,
-    input [4:0] id_reg_write_addr,
-    input [31:0] if_inst,
-    output reg [1:0] forward_1,
-    output reg [1:0] forward_2,
-    output reg stall_flag
-);
-    always_comb begin
-        // ALU input 1
-        if (ex_reg_write_enable
-            && (ex_reg_write_addr != 0)
-            && (ex_reg_write_addr == id_reg_read_addr_1)) begin
-            // EX hazard
-            forward_1 = 1;
-        end else if (mem_reg_write_enable
-            && (mem_reg_write_addr != 0)
-            && (mem_reg_write_addr == id_reg_read_addr_1)) begin
-            // MEM hazard
-            forward_1 = 2;
-        end else if (wb_reg_write_enable
-            && (wb_reg_write_addr != 0)
-            && (wb_reg_write_addr == id_reg_read_addr_1)) begin
-            // WB hazard
-            forward_1 = 3;
-        end else begin
-            // No hazard
-            forward_1 = 0;
-        end
+`include "Def.svh"
 
-        // ALU input 2
-        if (ex_reg_write_enable
-            && (ex_reg_write_addr != 0)
-            && (ex_reg_write_addr == id_reg_read_addr_2)) begin
-            // EX hazard
-            forward_2 = 1;
-        end else if (mem_reg_write_enable
-            && (mem_reg_write_addr != 0)
-            && (mem_reg_write_addr == id_reg_read_addr_2)) begin
-            // MEM hazard
-            forward_2 = 2;
-        end else if (wb_reg_write_enable
-            && (wb_reg_write_addr != 0)
-            && (wb_reg_write_addr == id_reg_read_addr_2)) begin
-            // WB hazard
-            forward_2 = 3;
-        end else begin
-            // No hazard
-            forward_2 = 0;
+module DataHazardCtrl (
+    input logic clk,
+    input logic ex_reg_write_enable,
+    input logic [`ADDR_SIZE-1:0] ex_reg_write_addr,
+    input logic mem_reg_write_enable,
+    input logic [`ADDR_SIZE-1:0] mem_reg_write_addr,
+    input logic wb_reg_write_enable,
+    input logic [`ADDR_SIZE-1:0] wb_reg_write_addr,
+    input logic [`ADDR_SIZE-1:0] id_reg_read_addr_1,
+    input logic [`ADDR_SIZE-1:0] id_reg_read_addr_2,
+    input logic id_reg_write_enable,
+    input logic id_reg_write_select,
+    input logic [`ADDR_SIZE-1:0] id_reg_write_addr,
+    input logic [`INST_SIZE-1:0] if_inst,
+    output logic [1:0] forward_1,
+    output logic [1:0] forward_2,
+    output logic stall_flag
+);
+    typedef enum logic [1:0] { NULL, EX, MEM, WB } FORWARD;
+    FORWARD FORWARD_1, FORWARD_2;
+
+    always_comb begin
+        // Forward data.
+        FORWARD_1 = NULL;
+        FORWARD_2 = NULL;
+        if (wb_reg_write_enable && wb_reg_write_addr) begin
+            if (wb_reg_write_addr == id_reg_read_addr_1) FORWARD_1 = WB;
+            if (wb_reg_write_addr == id_reg_read_addr_2) FORWARD_2 = WB;
         end
+        if (mem_reg_write_enable && mem_reg_write_addr) begin
+            if (mem_reg_write_addr == id_reg_read_addr_1) FORWARD_1 = MEM;
+            if (mem_reg_write_addr == id_reg_read_addr_2) FORWARD_2 = MEM;
+        end
+        if (ex_reg_write_enable && ex_reg_write_addr) begin
+            if (ex_reg_write_addr == id_reg_read_addr_1) FORWARD_1 = EX;
+            if (ex_reg_write_addr == id_reg_read_addr_2) FORWARD_2 = EX;
+        end
+        forward_1 = FORWARD_1;
+        forward_2 = FORWARD_2;
 
         // Stall the pipeline if there is an instruction that reads a
         // register following a load instruction that operates on the
