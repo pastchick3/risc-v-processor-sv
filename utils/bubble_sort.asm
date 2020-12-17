@@ -1,10 +1,28 @@
-// Load n-1 into x28 and x29 will be the counter i.
+// The C version of the bubble sort is given as below:
+// 
+// void bubbleSort(int arr[], size_t n) {
+//     for (size_t i = 0; i < n - 1; i++) {
+//         for (size_t j = 0; j < n - i - 1; j++) {
+//             if (arr[j] > arr[j+1]) {
+//                 swap(&arr[j], &arr[j+1]);
+//             }
+//         }
+//     }
+// }
+// 
+// void swap(int *a, int *b) {
+//     int temp = *a;
+//     *a = *b;
+//     *b = temp;
+// }
+
+// Load n-1 into x28. x29 will be the counter i.
 ld x28, 12(x0)
 ld x5, 1(x0)
 sub x28, x28, x5
 
 OuterLoop:
-// Load n-i-1 into x30 and x31 will be the counter j.
+// Load n-i-1 into x30. x31 will be the counter j.
 ld x30, 12(x0)
 sub x30, x30, x29
 ld x5, 1(x0)
