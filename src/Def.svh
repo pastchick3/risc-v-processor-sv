@@ -18,3 +18,6 @@
 `define OR 1
 `define ADD 2
 `define SUB 3
+
+// 
+// typedef logic [ADDR_SIZE-1: 0] addr_t;
