@@ -10,8 +10,8 @@ module Processor (
     logic [`ADDR_SIZE:0] pc = 0;
 
     // Declare the pipeline control singals.
-    logic branch_flag = 0;
-    logic stall_flag = 0;
+    logic branch_flag;
+    logic stall_flag;
 
     // Declare one out of three write-back control signals.
     // The other two are declared and defined in  `Interface.sv`.
@@ -33,7 +33,6 @@ module Processor (
         .clk(clk),
         .pc(pc[`ADDR_SIZE-1:0]),
         .branch_flag(branch_flag),
-        .stall_flag(stall_flag),
         .inst_addr(pc[`ADDR_SIZE-1:0]),
         .reg_write_mux_out(reg_write_mux_out),
         .alu_in_1_mux_out(alu_in_1_mux_out),
@@ -120,24 +119,10 @@ module Processor (
     // -------------------- Other Supporting Modules --------------------
 
     // Instantiate the data hazard control module.
-    DataHazardCtrl data_hazard_ctrl (
-        .clk(clk),
-        .ex_reg_write_enable(processor_intf.ex_reg_write_enable),
-        .ex_reg_write_addr(processor_intf.ex_reg_write_addr),
-        .mem_reg_write_enable(processor_intf.mem_reg_write_enable),
-        .mem_reg_write_addr(processor_intf.mem_reg_write_addr),
-        .wb_reg_write_enable(processor_intf.wb_reg_write_enable),
-        .wb_reg_write_addr(processor_intf.wb_reg_write_addr),
-        .id_reg_read_addr_1(processor_intf.id_reg_read_addr_1),
-        .id_reg_read_addr_2(processor_intf.id_reg_read_addr_2),
-        .id_reg_write_enable(processor_intf.id_reg_write_enable),
-        .id_reg_write_select(processor_intf.id_reg_write_select),
-        .id_reg_write_addr(processor_intf.id_reg_write_addr),
-        .if_inst(processor_intf.if_inst),
-        .forward_1(forward_1),
-        .forward_2(forward_2),
-        .stall_flag(stall_flag)
-    );
+    DataHazardCtrl data_hazard_ctrl (processor_intf.DataHazardCtrl);
+    assign forward_1 = processor_intf.forward_1;
+    assign forward_2 = processor_intf.forward_2;
+    assign stall_flag = processor_intf.stall_flag;
 
     // Compute the branch flag.
     always_comb begin

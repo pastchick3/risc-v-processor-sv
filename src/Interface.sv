@@ -5,7 +5,6 @@ interface ProcessorIntf (
     input logic [`ADDR_SIZE-1:0] pc,
     input logic [`ADDR_SIZE-1:0] inst_addr,
     input logic branch_flag,
-    input logic stall_flag,
     input logic [`DATA_SIZE-1:0] reg_write_mux_out, // Declare one out of three write-back control signals.
     input logic [`DATA_SIZE-1:0] alu_in_1_mux_out,
     input logic [`DATA_SIZE-1:0] alu_in_2_mux_out,
@@ -123,5 +122,15 @@ interface ProcessorIntf (
     modport WbReg (
         input clk, reg_write_mux_out, mem_reg_write_enable, mem_reg_write_addr,
         output wb_reg_write_mux_out, wb_reg_write_enable, wb_reg_write_addr
+    );
+
+    logic [1:0] forward_1;
+    logic [1:0] forward_2;
+    logic stall_flag;
+    modport DataHazardCtrl (
+        input clk, ex_reg_write_enable, ex_reg_write_addr, mem_reg_write_enable, mem_reg_write_addr,
+            wb_reg_write_enable, wb_reg_write_addr, id_reg_read_addr_1, id_reg_read_addr_2,
+            id_reg_write_enable, id_reg_write_select, id_reg_write_addr, if_inst,
+        output forward_1, forward_2, stall_flag
     );
 endinterface

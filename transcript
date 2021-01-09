@@ -1,0 +1,1348 @@
+# Compile of Def.svh failed with 1 errors.
+# Compile of Interface.sv failed with 2 errors.
+# Compile of Mux.sv failed with 1 errors.
+# Compile of PipelineReg.sv was successful.
+# Compile of Memory.sv failed with 1 errors.
+# Compile of Decoder.sv failed with 1 errors.
+# Compile of Alu.sv failed with 1 errors.
+# Compile of DataHazardCtrl.sv failed with 1 errors.
+# Compile of Processor.sv failed with 1 errors.
+# Compile of Driver.sv was successful.
+# 10 compiles, 8 failed with 9 errors.
+# Compile of Def.svh was successful.
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Mux.sv was successful.
+# Compile of PipelineReg.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Decoder.sv was successful.
+# Compile of Alu.sv was successful.
+# Compile of DataHazardCtrl.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Driver.sv was successful.
+# 10 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 14:48:01 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMemIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfRegIntf
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of Processor.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 14:49:59 on Jan 09,2021, Elapsed time: 0:01:58
+# Errors: 0, Warnings: 5
+# vsim risc-v-processor-sv.Driver 
+# Start time: 14:49:59 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMemIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfRegIntf
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error (suppressible): (vsim-8885) Illegal inout port connection for port 'inst_addr' to reg type.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/processor_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 16
+# Error loading design
+# End time: 14:49:59 on Jan 09,2021, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 14:50:36 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMemIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfRegIntf
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 14:51:58 on Jan 09,2021, Elapsed time: 0:01:22
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 14:51:58 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMemIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfRegIntf
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 1 errors.
+# Compile of PipelineReg.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 15:00:50 on Jan 09,2021, Elapsed time: 0:08:52
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:00:50 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3766) The modport 'inst_mem' was not found in interface 'ProcessorIntf'.
+#    Time: 0 ps  Iteration: 0  Instance: /Driver/processor/inst_mem File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Memory.sv
+# Error loading design
+# End time: 15:00:51 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
+# Compile of Memory.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:01:18 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3043) Unresolved reference to 'if_reg_intf'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 43
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'inst'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(67).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 42
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'pc'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(88).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 64
+# ** Error: (vsim-3043) Unresolved reference to 'if_reg_intf'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 38
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'if_inst'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/DataHazardCtrl.sv(16).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/data_hazard_ctrl File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 196
+# Error loading design
+# End time: 15:01:19 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 5
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:02:18 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3043) Unresolved reference to 'if_reg_intf'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 43
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'inst'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(67).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 42
+# ** Error: (vsim-3043) Unresolved reference to 'if_reg_intf'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 38
+# Error loading design
+# End time: 15:02:18 on Jan 09,2021, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 3
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:02:57 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3043) Unresolved reference to 'if_reg_intf'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 38
+# Error loading design
+# End time: 15:02:58 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:04:36 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 15:05:40 on Jan 09,2021, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:05:40 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 15:06:48 on Jan 09,2021, Elapsed time: 0:01:08
+# Errors: 0, Warnings: 2
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:06:48 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of Decoder.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 15:09:47 on Jan 09,2021, Elapsed time: 0:02:59
+# Errors: 0, Warnings: 2
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:09:47 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.DecoderIntf
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of Decoder.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 15:14:13 on Jan 09,2021, Elapsed time: 0:04:26
+# Errors: 0, Warnings: 2
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:14:13 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3043) Unresolved reference to 'processor_int'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 49
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'read_addr_1'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(64).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/reg_mem_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 46
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'read_addr_2'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(65).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/reg_mem_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 46
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'reg_read_addr_1'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(91).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'reg_read_addr_2'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(92).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'reg_write_addr'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(96).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'data_read_addr'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(98).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'data_write_addr'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(99).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'alu_ctrl'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(100).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'branch'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(102).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'branch_offset'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(104).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 57
+# Error loading design
+# End time: 15:14:14 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 11
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:15:10 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 15:17:00 on Jan 09,2021, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:17:00 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3773) Interface item 'inst' is not in modport 'Decoder'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv Line: 8
+# ** Error: (vsim-3043) Unresolved reference to 'inst' in intf.inst.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv Line: 8
+# Error loading design
+# End time: 15:17:01 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# Compile of Decoder.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:18:02 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3773) Interface item 'inst' is not in modport 'Decoder'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv Line: 24
+# ** Error: (vsim-3043) Unresolved reference to 'inst' in intf.inst.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv Line: 24
+# Error loading design
+# End time: 15:18:02 on Jan 09,2021, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 2
+# Compile of Decoder.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:18:26 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Processor.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Def.svh was successful.
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Mux.sv was successful.
+# Compile of PipelineReg.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Decoder.sv was successful.
+# Compile of Alu.sv was successful.
+# Compile of DataHazardCtrl.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Driver.sv was successful.
+# 10 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 15:23:38 on Jan 09,2021, Elapsed time: 0:05:12
+# Errors: 0, Warnings: 5
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:23:38 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (reg_inst) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 199
+# ** Error: (vsim-3043) Unresolved reference to 'reg_inst' in processor_intf.reg_inst.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 199
+# ** Warning: (vsim-3008) [CNNODP] - Component name (reg_pc) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 58
+# ** Error: (vsim-3043) Unresolved reference to 'reg_pc' in processor_intf.reg_pc.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 58
+# ** Warning: (vsim-3008) [CNNODP] - Component name (reg_inst) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv Line: 8
+# ** Error: (vsim-3043) Unresolved reference to 'reg_inst' in intf.reg_inst.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/decoder File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv Line: 8
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'pc'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv(75).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 54
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'if_inst'. The port definition is at: C:/Users/33160/Desktop/risc-v-processor-sv/src/DataHazardCtrl.sv(16).
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/data_hazard_ctrl File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 186
+# Error loading design
+# End time: 15:23:39 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 6
+# Compile of Decoder.sv was successful.
+# Compile of Processor.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:25:05 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMemIntf
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Memory.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 15:35:35 on Jan 09,2021, Elapsed time: 0:10:30
+# Errors: 0, Warnings: 4
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:35:35 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of Processor.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 15:39:27 on Jan 09,2021, Elapsed time: 0:03:52
+# Errors: 0, Warnings: 2
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:39:27 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 3 errors.
+# Compile of Interface.sv was successful.
+# Compile of Memory.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of Def.svh was successful.
+# Compile of Interface.sv was successful.
+# Compile of Mux.sv was successful.
+# Compile of PipelineReg.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Decoder.sv was successful.
+# Compile of Alu.sv was successful.
+# Compile of DataHazardCtrl.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Driver.sv was successful.
+# 10 compiles, 0 failed with no errors.
+# Break key hit
+# Break in Module Processor at C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv line 215
+quit -sim
+# End time: 15:45:06 on Jan 09,2021, Elapsed time: 0:05:39
+# Errors: 0, Warnings: 4
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 15:45:09 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdRegIntf
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 1 errors.
+# Compile of PipelineReg.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 16:04:32 on Jan 09,2021, Elapsed time: 0:19:23
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:04:32 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3697) The interface port 'intf' of type 'IdRegIntf' must be passed the same-type interface.
+#    Time: 0 ps  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 70
+# Error loading design
+# End time: 16:04:33 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
+# Compile of Interface.sv was successful.
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:05:08 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3773) Interface item 'pc' is not in modport 'IdReg'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 38
+# ** Error: (vsim-3043) Unresolved reference to 'pc' in intf.pc.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 38
+# ** Warning: (vsim-3008) [CNNODP] - Component name (read_data_1) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 41
+# ** Error: (vsim-3043) Unresolved reference to 'read_data_1' in intf.read_data_1.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 41
+# ** Warning: (vsim-3008) [CNNODP] - Component name (read_data_2) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 42
+# ** Error: (vsim-3043) Unresolved reference to 'read_data_2' in intf.read_data_2.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 42
+# Error loading design
+# End time: 16:05:08 on Jan 09,2021, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 5
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:07:09 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 16:09:03 on Jan 09,2021, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:09:03 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (reg_egread_data_1) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 41
+# ** Error: (vsim-3043) Unresolved reference to 'reg_egread_data_1' in intf.reg_egread_data_1.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/id_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 41
+# Error loading design
+# End time: 16:09:04 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of PipelineReg.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:09:22 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExRegIntf
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 1 errors.
+# Compile of PipelineReg.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 16:29:47 on Jan 09,2021, Elapsed time: 0:20:25
+# Errors: 0, Warnings: 4
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:29:47 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-3773) Interface item 'alu_in_1_mux_out' is not in modport 'ExReg'.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/ex_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 81
+# ** Error: (vsim-3043) Unresolved reference to 'alu_in_1_mux_out' in intf.alu_in_1_mux_out.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/ex_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 81
+# Error loading design
+# End time: 16:29:48 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:30:38 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMemIntf
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Def.svh was successful.
+# Compile of Interface.sv was successful.
+# Compile of Mux.sv was successful.
+# Compile of PipelineReg.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Decoder.sv was successful.
+# Compile of Alu.sv was successful.
+# Compile of DataHazardCtrl.sv was successful.
+# Compile of Processor.sv was successful.
+# Compile of Driver.sv was successful.
+# 10 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 16:35:39 on Jan 09,2021, Elapsed time: 0:05:01
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:35:39 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemRegIntf
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 2 errors.
+# Compile of PipelineReg.sv was successful.
+# Compile of Memory.sv was successful.
+# Compile of Processor.sv was successful.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 16:44:24 on Jan 09,2021, Elapsed time: 0:08:45
+# Errors: 0, Warnings: 3
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:44:24 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Error: (vsim-8220) This or another usage of 'intf.mem_reg_write_addr' inconsistent with 'net' object.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/mem_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 98
+# ** Error: (vsim-8220) This or another usage of 'intf.mem_reg_write_enable' inconsistent with 'net' object.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor/mem_reg File: C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv Line: 97
+# Error loading design
+# End time: 16:44:25 on Jan 09,2021, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Processor.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Processor.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:48:34 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of Processor.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Processor.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 16:51:43 on Jan 09,2021, Elapsed time: 0:03:09
+# Errors: 0, Warnings: 7
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:51:43 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.Mux2
+# ** Error (suppressible): (vsim-3843) Can't instantiate a module (Mux2) within an interface.
+#    Time: 0 ps  Iteration: 0  Instance: /Driver/processor/processor_intf File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv Line: 128
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# Error loading design
+# End time: 16:51:43 on Jan 09,2021, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of Interface.sv failed with 1 errors.
+# Compile of Processor.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Interface.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:54:00 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbRegIntf
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of PipelineReg.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 16:59:41 on Jan 09,2021, Elapsed time: 0:05:41
+# Errors: 0, Warnings: 4
+# vsim risc-v-processor-sv.Driver 
+# Start time: 16:59:41 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 17:01:55 on Jan 09,2021, Elapsed time: 0:02:14
+# Errors: 0, Warnings: 2
+# vsim risc-v-processor-sv.Driver 
+# Start time: 17:01:55 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv was successful.
+# Compile of PipelineReg.sv was successful.
+# Compile of Processor.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim risc-v-processor-sv.Driver
+# End time: 17:12:15 on Jan 09,2021, Elapsed time: 0:10:20
+# Errors: 0, Warnings: 2
+# vsim risc-v-processor-sv.Driver 
+# Start time: 17:12:15 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all
+# Compile of Interface.sv failed with 1 errors.
+# Compile of DataHazardCtrl.sv was successful.
+# Compile of Processor.sv failed with 1 errors.
+# 3 compiles, 2 failed with 2 errors.
+# Compile of Interface.sv was successful.
+# Compile of Processor.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# End time: 17:51:33 on Jan 09,2021, Elapsed time: 0:39:18
+# Errors: 0, Warnings: 4
+# vsim risc-v-processor-sv.Driver 
+# Start time: 17:51:33 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (forward_1) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 123
+# ** Error: (vsim-3043) Unresolved reference to 'forward_1' in data_hazard_ctrl.forward_1.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 123
+# ** Warning: (vsim-3008) [CNNODP] - Component name (forward_2) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 124
+# ** Error: (vsim-3043) Unresolved reference to 'forward_2' in data_hazard_ctrl.forward_2.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 124
+# ** Warning: (vsim-3008) [CNNODP] - Component name (stall_flag) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 125
+# ** Error: (vsim-3043) Unresolved reference to 'stall_flag' in data_hazard_ctrl.stall_flag.
+#    Time: 0 ns  Iteration: 0  Instance: /Driver/processor File: C:/Users/33160/Desktop/risc-v-processor-sv/src/Processor.sv Line: 125
+# Error loading design
+# End time: 17:51:33 on Jan 09,2021, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 4
+# Compile of Processor.sv was successful.
+vsim risc-v-processor-sv.Driver
+# vsim risc-v-processor-sv.Driver 
+# Start time: 17:52:22 on Jan 09,2021
+# Loading sv_std.std
+# Loading risc-v-processor-sv.Driver
+# Loading risc-v-processor-sv.Processor
+# Loading risc-v-processor-sv.ProcessorIntf
+# Loading risc-v-processor-sv.InstMem
+# Loading risc-v-processor-sv.IfReg
+# Loading risc-v-processor-sv.Decoder
+# Loading risc-v-processor-sv.RegMem
+# Loading risc-v-processor-sv.IdReg
+# Loading risc-v-processor-sv.Mux4
+# Loading risc-v-processor-sv.ALU
+# Loading risc-v-processor-sv.ExReg
+# Loading risc-v-processor-sv.DataMem
+# Loading risc-v-processor-sv.MemReg
+# Loading risc-v-processor-sv.Mux2
+# Loading risc-v-processor-sv.WbReg
+# Loading risc-v-processor-sv.DataHazardCtrl
+run -all

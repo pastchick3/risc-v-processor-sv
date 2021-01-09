@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -8,3 +9,653 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1
+vALU
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1610181331
+!i10b 1
+!s100 8132X1AM[ET;?k_]f<aXM0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>f^?1j_RBc?6cHYR:5abg0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dC:/Users/33160/Desktop/risc-v-processor-sv
+w1608118134
+8C:/Users/33160/Desktop/risc-v-processor-sv/src/Alu.sv
+FC:/Users/33160/Desktop/risc-v-processor-sv/src/Alu.sv
+!i122 98
+L0 3 18
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1610181331.000000
+!s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:/Users/33160/Desktop/risc-v-processor-sv/src/Alu.sv|
+!s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/Alu.sv|
+!i113 1
+Z7 o-work risc-v-processor-sv -sv
+Z8 tCvgOpt 0
+n@a@l@u
+vDataHazardCtrl
+R0
+!s110 1610185734
+!i10b 1
+!s100 W6VfR[1Z_Pn]cc_lcR9Qd1
+R2
+IQg^k]@8HJE]=aJ>lJd_K_3
+R3
+S1
+R4
+w1610185493
+8C:/Users/33160/Desktop/risc-v-processor-sv/src/DataHazardCtrl.sv
+FC:/Users/33160/Desktop/risc-v-processor-sv/src/DataHazardCtrl.sv
+!i122 125
+L0 3 37
+R5
+r1
+!s85 0
+31
+!s108 1610185734.000000
+!s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:/Users/33160/Desktop/risc-v-processor-sv/src/DataHazardCtrl.sv|
+!s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/DataHazardCtrl.sv|
+!i113 1
+R7
+R8
+n@data@hazard@ctrl
+vDataMem
+R0
+Z9 !s110 1610181813
+!i10b 1
+!s100 ZU^ea<7;lB4cj36<HffhI0
+R2
+IRm3fna:<:HEmMH1>T9iN;3
+R3
+S1
+R4
+Z10 w1610181425
+Z11 8C:/Users/33160/Desktop/risc-v-processor-sv/src/Memory.sv
+Z12 FC:/Users/33160/Desktop/risc-v-processor-sv/src/Memory.sv
+!i122 104
+L0 27 13
+R5
+r1
+!s85 0
+31
+Z13 !s108 1610181813.000000
+Z14 !s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:/Users/33160/Desktop/risc-v-processor-sv/src/Memory.sv|
+Z15 !s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/Memory.sv|
+!i113 1
+R7
+R8
+n@data@mem
+YDataMemIntf
+R0
+!s110 1610181036
+!i10b 1
+!s100 Y`<gd5W3PX;alcfWe7hKH3
+R2
+I<K`6MOSSjC=n76lUmdmQM3
+R3
+S1
+R4
+w1610181028
+Z16 8C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv
+Z17 FC:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv
+!i122 92
+L0 144 0
+R5
+r1
+!s85 0
+31
+!s108 1610181036.000000
+Z18 !s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv|
+Z19 !s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/Interface.sv|
+!i113 1
+R7
+R8
+n@data@mem@intf
+vDecoder
+R0
+R1
+!i10b 1
+!s100 g9fY<ac7ObLHmLeOZKaDA2
+R2
+IP2kPo;5Z87Z2_Vz6[TV222
+R3
+S1
+R4
+w1610177081
+8C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv
+FC:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv
+!i122 97
+L0 3 58
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv|
+!s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/Decoder.sv|
+!i113 1
+R7
+R8
+n@decoder
+YDecoderIntf
+R0
+!s110 1610176180
+!i10b 1
+!s100 gO6TejlSm3BQe@_e?kA1l1
+R2
+IP;[[dzV]=O`;cQ924<ZzU3
+R3
+S1
+R4
+w1610176157
+R16
+R17
+!i122 37
+L0 29 0
+R5
+r1
+!s85 0
+31
+!s108 1610176180.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@decoder@intf
+vDriver
+R0
+!s110 1610181332
+!i10b 1
+!s100 M=oQ8C1_74BiaA_^`oURC1
+R2
+Id>LgLYYJTHg3kVDNJ:DXL1
+R3
+S1
+R4
+w1608106514
+8C:/Users/33160/Desktop/risc-v-processor-sv/src/Driver.sv
+FC:/Users/33160/Desktop/risc-v-processor-sv/src/Driver.sv
+!i122 101
+L0 3 16
+R5
+r1
+!s85 0
+31
+!s108 1610181332.000000
+!s107 C:/Users/33160/Desktop/risc-v-processor-sv/src/Driver.sv|
+!s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/Driver.sv|
+!i113 1
+R7
+R8
+n@driver
+vExReg
+R0
+Z20 !s110 1610183527
+!i10b 1
+!s100 h:cWaC;3G0gCnfUf?FkQY3
+R2
+IA^e=K1Idi[Q4zTAeQ4ND91
+R3
+S1
+R4
+Z21 w1610183042
+Z22 8C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv
+Z23 FC:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv
+!i122 123
+L0 57 35
+R5
+r1
+!s85 0
+31
+Z24 !s108 1610183527.000000
+Z25 !s107 C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv|
+Z26 !s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/PipelineReg.sv|
+!i113 1
+R7
+R8
+n@ex@reg
+YExRegIntf
+R0
+!s110 1610179502
+!i10b 1
+!s100 zz1>=eaEgnCoL_Pma[`WI1
+R2
+ITG>dDTFl27ISmiST`Ol;S1
+R3
+S1
+R4
+w1610179450
+R16
+R17
+!i122 83
+L0 132 0
+R5
+r1
+!s85 0
+31
+!s108 1610179502.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@ex@reg@intf
+vIdReg
+R0
+R20
+!i10b 1
+!s100 <<aUgZfgjjgO[[AbJU7ag2
+R2
+IjYeIZ3foGZnl20>RP=zTj3
+R3
+S1
+R4
+R21
+R22
+R23
+!i122 123
+L0 17 39
+R5
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R7
+R8
+n@id@reg
+YIdRegIntf
+R0
+!s110 1610178273
+!i10b 1
+!s100 99_M^C4Z3LID^ROdbS;871
+R2
+InC`HI_U_gk:0F7YI`R>@N2
+R3
+S1
+R4
+w1610178227
+R16
+R17
+!i122 70
+L0 91 0
+R5
+r1
+!s85 0
+31
+!s108 1610178273.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@id@reg@intf
+vIfReg
+R0
+R20
+!i10b 1
+!s100 chXDDPX>Eb1[?>DTSLZ942
+R2
+I>@7AT;mJO`1J?:7O:XfI73
+R3
+S1
+R4
+R21
+R22
+R23
+!i122 123
+L0 1 15
+R5
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R7
+R8
+n@if@reg
+YIfRegIntf
+R0
+Z27 !s110 1610175033
+!i10b 1
+!s100 zNVJi4zeoY[oI`XX`1GF40
+R2
+I]PPnCi;K]IPGUX`C`a9C@2
+R3
+S1
+R4
+Z28 w1610175027
+R16
+R17
+!i122 26
+L0 59 0
+R5
+r1
+!s85 0
+31
+Z29 !s108 1610175033.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@if@reg@intf
+vInstMem
+R0
+R9
+!i10b 1
+!s100 AKmc?b<W^C@LaVJh4R:be2
+R2
+I[O]6CA>QIHTYTPa[S9lHd1
+R3
+S1
+R4
+R10
+R11
+R12
+!i122 104
+L0 3 7
+R5
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R7
+R8
+n@inst@mem
+YInstMemIntf
+R0
+R27
+!i10b 1
+!s100 <8mZl[ILC[ibGBXR]JE1I1
+R2
+I;m6FZMF332[=VAf=67zfK2
+R3
+S1
+R4
+R28
+R16
+R17
+!i122 26
+L0 14 0
+R5
+r1
+!s85 0
+31
+R29
+R18
+R19
+!i113 1
+R7
+R8
+n@inst@mem@intf
+vMemReg
+R0
+R20
+!i10b 1
+!s100 HOVdf7lJ0caOeINM`d3]Q0
+R2
+I^d:ONfH?ol?]R1j]DMO3D2
+R3
+S1
+R4
+R21
+R22
+R23
+!i122 123
+L0 93 11
+R5
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R7
+R8
+n@mem@reg
+YMemRegIntf
+R0
+Z30 !s110 1610181330
+!i10b 1
+!s100 QCXl9;5YYU8VO1gQeiOz51
+R2
+IVmWHA`mC_o@^_W@5HLY310
+R3
+S1
+R4
+w1610181193
+R16
+R17
+!i122 93
+L0 128 0
+R5
+r1
+!s85 0
+31
+Z31 !s108 1610181330.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@mem@reg@intf
+vMux2
+R0
+R30
+!i10b 1
+!s100 zI2EH6A9n2=UoAe[Ja]691
+R2
+I=b1Y1c4BS]5Vd1F3N8PeC2
+R3
+S1
+R4
+Z32 w1608108908
+Z33 8C:/Users/33160/Desktop/risc-v-processor-sv/src/Mux.sv
+Z34 FC:/Users/33160/Desktop/risc-v-processor-sv/src/Mux.sv
+!i122 94
+L0 3 13
+R5
+r1
+!s85 0
+31
+R31
+Z35 !s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:/Users/33160/Desktop/risc-v-processor-sv/src/Mux.sv|
+Z36 !s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:/Users/33160/Desktop/risc-v-processor-sv/src/Mux.sv|
+!i113 1
+R7
+R8
+n@mux2
+vMux4
+R0
+R30
+!i10b 1
+!s100 [VQ@;Sd>inUIlIY2bnCT42
+R2
+IzZ`D:O^D81>2]I>IO][De1
+R3
+S1
+R4
+R32
+R33
+R34
+!i122 94
+L0 17 17
+R5
+r1
+!s85 0
+31
+R31
+R35
+R36
+!i113 1
+R7
+R8
+n@mux4
+vProcessor
+R0
+!s110 1610185936
+!i10b 1
+!s100 dXC^VF6B>W:8bdmBQRL7V2
+R2
+IiV?SkTF[?D@KjA1KAY`222
+R3
+S1
+R4
+w1610185916
+8C:\Users\33160\Desktop\risc-v-processor-sv\src\Processor.sv
+FC:\Users\33160\Desktop\risc-v-processor-sv\src\Processor.sv
+!i122 128
+L0 3 156
+R5
+r1
+!s85 0
+31
+!s108 1610185936.000000
+!s107 C:\Users\33160\Desktop\risc-v-processor-sv\src\Def.svh|C:\Users\33160\Desktop\risc-v-processor-sv\src\Processor.sv|
+!s90 -reportprogress|300|-work|risc-v-processor-sv|-sv|-stats=none|C:\Users\33160\Desktop\risc-v-processor-sv\src\Processor.sv|
+!i113 1
+R7
+R8
+n@processor
+YProcessorIntf
+R0
+!s110 1610185832
+!i10b 1
+!s100 ]E7D5OKc;:MX@OFTi63nP3
+R2
+I1D6;^@kF3mKgmDW`aSQhN3
+R3
+S1
+R4
+w1610185809
+R16
+R17
+!i122 126
+L0 3 0
+R5
+r1
+!s85 0
+31
+!s108 1610185832.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@processor@intf
+vRegMem
+R0
+R9
+!i10b 1
+!s100 VImgiUTUSK1f:GbXZH[]G1
+R2
+Ia1la[<<I>PH91ZHje:Zh63
+R3
+S1
+R4
+R10
+R11
+R12
+!i122 104
+L0 11 15
+R5
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R7
+R8
+n@reg@mem
+YRegMemIntf
+R0
+!s110 1610177012
+!i10b 1
+!s100 Na5zMJNT`G]3]9W]Y]4Yh1
+R2
+Ibf6Lze6aY=9jhMlb`oX]n3
+R3
+S1
+R4
+w1610177004
+R16
+R17
+!i122 58
+L0 46 0
+R5
+r1
+!s85 0
+31
+!s108 1610177012.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@reg@mem@intf
+vWbReg
+R0
+R20
+!i10b 1
+!s100 FS`9:_:SN6HUjRkzbNGgm0
+R2
+IkF^9Jz8AFUb6OTjN]aD351
+R3
+S1
+R4
+R21
+R22
+R23
+!i122 123
+L0 105 9
+R5
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R7
+R8
+n@wb@reg
+YWbRegIntf
+R0
+!s110 1610182438
+!i10b 1
+!s100 N>QMYDD>;ccgobXFKGVL>1
+R2
+IIJCS?XS1ieJ35INCgZf523
+R3
+S1
+R4
+w1610182434
+R16
+R17
+!i122 117
+L0 146 0
+R5
+r1
+!s85 0
+31
+!s108 1610182438.000000
+R18
+R19
+!i113 1
+R7
+R8
+n@wb@reg@intf
