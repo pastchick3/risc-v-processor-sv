@@ -1,5 +1,3 @@
-`include "Def.svh"
-
 module DataHazardCtrl (
     ProcessorIntf.DataHazardCtrl intf
 );

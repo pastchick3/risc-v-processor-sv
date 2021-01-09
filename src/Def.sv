@@ -1,23 +1,27 @@
-// System specifications
-`define DATA_SIZE 8
-`define INST_SIZE 32
-`define MEM_LEN 32
-`define ADDR_SIZE 5
+package Def;
+    // System specifications
+    localparam DATA_SIZE = 8;
+    localparam INST_SIZE = 32;
+    localparam MEM_LEN = 32;
+    localparam ADDR_SIZE = 5;
 
-// Input files
-`define PROGRAM "utils/program.obj"
-`define DATA "utils/data.mem"
+    // Input files
+    localparam PROGRAM = "utils/program.obj";
+    localparam DATA = "utils/data.mem";
 
-// Enum for branch instructions
-`define NO_JUMP 0
-`define BEQ 1
-`define BLT 2
+    // Enum for branch instructions
+    localparam NO_JUMP = 0;
+    localparam BEQ = 1;
+    localparam BLT = 2;
 
-// Enum for ALU operations
-`define AND 0
-`define OR 1
-`define ADD 2
-`define SUB 3
+    // Enum for ALU operations
+    localparam AND = 0;
+    localparam OR = 1;
+    localparam ADD = 2;
+    localparam SUB = 3;
 
-// 
-// typedef logic [ADDR_SIZE-1: 0] addr_t;
+    // Port type
+    typedef logic [INST_SIZE-1:0] inst_port;
+    typedef logic [ADDR_SIZE-1:0] addr_port;
+    typedef logic [DATA_SIZE-1:0] data_port;
+endpackage

@@ -1,4 +1,4 @@
-`include "Def.svh"
+import Def::*;
 
 module Processor (
     input logic clk,
@@ -7,7 +7,7 @@ module Processor (
     // The program counter is 6 bit so we can check whether it exceeds
     // 32 (the size of the instruction memory), which indicates the
     // the program is finished.
-    logic [`ADDR_SIZE:0] pc = 0;
+    logic [ADDR_SIZE:0] pc = 0;
 
     // Declare the pipeline control singals.
     logic branch_flag;
@@ -15,25 +15,25 @@ module Processor (
 
     // Declare one out of three write-back control signals.
     // The other two are declared and defined in  `Interface.sv`.
-    logic [`DATA_SIZE-1:0] reg_write_mux_out;
+    data_port reg_write_mux_out;
 
     // Declare data forwarding control singals.
     logic [1:0] forward_1;
     logic [1:0] forward_2;
-    logic [`DATA_SIZE-1:0] alu_in_1_mux_out;
-    logic [`DATA_SIZE-1:0] alu_in_2_mux_out;
-    logic [`DATA_SIZE-1:0] wb_reg_write_mux_out;
+    data_port alu_in_1_mux_out;
+    data_port alu_in_2_mux_out;
+    data_port wb_reg_write_mux_out;
 
     // Declare ALU output signals.
-    logic [`DATA_SIZE-1:0] alu_out;
+    data_port alu_out;
     logic zero;
 
     // Instantiate the main interface.
     ProcessorIntf processor_intf (
         .clk(clk),
-        .pc(pc[`ADDR_SIZE-1:0]),
+        .pc(pc[ADDR_SIZE-1:0]),
         .branch_flag(branch_flag),
-        .inst_addr(pc[`ADDR_SIZE-1:0]),
+        .inst_addr(pc[ADDR_SIZE-1:0]),
         .reg_write_mux_out(reg_write_mux_out),
         .alu_in_1_mux_out(alu_in_1_mux_out),
         .alu_in_2_mux_out(alu_in_2_mux_out),
@@ -126,9 +126,9 @@ module Processor (
 
     // Compute the branch flag.
     always_comb begin
-        if ((processor_intf.ex_branch == `BEQ && processor_intf.ex_zero)
-            || (processor_intf.ex_branch == `BLT
-            && processor_intf.ex_alu_out >= 2**(`DATA_SIZE-1))) begin
+        if ((processor_intf.ex_branch == BEQ && processor_intf.ex_zero)
+            || (processor_intf.ex_branch == BLT
+            && processor_intf.ex_alu_out >= 2**(DATA_SIZE-1))) begin
             branch_flag = 1;
         end else begin
             branch_flag = 0;
@@ -137,7 +137,7 @@ module Processor (
 
     // Compute the program counter.
     always_ff @(posedge clk) begin
-        if (pc >= `MEM_LEN) begin
+        if (pc >= MEM_LEN) begin
             done <= 1;
         end else begin
             done <= 0;

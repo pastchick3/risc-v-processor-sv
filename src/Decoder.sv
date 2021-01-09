@@ -1,4 +1,4 @@
-`include "Def.svh"
+import Def::*;
 
 module Decoder (
     ProcessorIntf.Decoder intf
@@ -16,9 +16,9 @@ module Decoder (
         // Control singals.
         intf.reg_write_enable = 0;
         intf.data_write_enable = 0;
-        intf.alu_ctrl = `AND;
+        intf.alu_ctrl = AND;
         intf.reg_write_select = 0;
-        intf.branch = `NO_JUMP;
+        intf.branch = NO_JUMP;
 
         // Decode an instruction based on { func7, func3, opcode }.
         casex ({ intf.if_inst[31:25], intf.if_inst[14:12], intf.if_inst[6:0] })
@@ -34,26 +34,26 @@ module Decoder (
             end
             17'b0000000_110_0110011: begin // or
                 intf.reg_write_enable = 1;
-                intf.alu_ctrl = `OR;
+                intf.alu_ctrl = OR;
                 intf.reg_write_select = 1;
             end
             17'b0000000_000_0110011: begin // add
                 intf.reg_write_enable = 1;
-                intf.alu_ctrl = `ADD;
+                intf.alu_ctrl = ADD;
                 intf.reg_write_select = 1;
             end
             17'b0100000_000_0110011: begin // sub
                 intf.reg_write_enable = 1;
-                intf.alu_ctrl = `SUB;
+                intf.alu_ctrl = SUB;
                 intf.reg_write_select = 1;
             end
             17'bXXXXXXX_000_1100011: begin // beq
                 intf.alu_ctrl = 3;
-                intf.branch = `BEQ;
+                intf.branch = BEQ;
             end
             17'bXXXXXXX_100_1100011: begin // blt
                 intf.alu_ctrl = 3;
-                intf.branch = `BLT;
+                intf.branch = BLT;
             end
         endcase
     end

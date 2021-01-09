@@ -1,10 +1,10 @@
-`include "Def.svh"
+import Def::*;
 
 module Mux2 (
     input logic select,
-    input logic [`DATA_SIZE-1:0] in_1,
-    input logic [`DATA_SIZE-1:0] in_2,
-    output logic [`DATA_SIZE-1:0] out
+    input data_port in_1,
+    input data_port in_2,
+    output data_port out
 );
     always_comb begin
         case (select)
@@ -16,11 +16,11 @@ endmodule
 
 module Mux4 (
     input logic [1:0] select,
-    input logic [`DATA_SIZE-1:0] in_1,
-    input logic [`DATA_SIZE-1:0] in_2,
-    input logic [`DATA_SIZE-1:0] in_3,
-    input logic [`DATA_SIZE-1:0] in_4,
-    output logic [`DATA_SIZE-1:0] out
+    input data_port in_1,
+    input data_port in_2,
+    input data_port in_3,
+    input data_port in_4,
+    output data_port out
 );
     always_comb begin
         case (select)
