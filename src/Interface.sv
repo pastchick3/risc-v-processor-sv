@@ -11,12 +11,14 @@ interface ProcessorIntf (
     input data_port alu_out,
     input logic zero
 );
+    // The instruction memory.
     inst_port inst;
     modport InstMem (
         input inst_addr,
         output inst
     );
 
+    // IF/ID pipeline registers.
     addr_port if_pc;
     inst_port if_inst;
     modport IfReg (
@@ -24,6 +26,7 @@ interface ProcessorIntf (
         output if_pc, if_inst
     );
 
+    // The instruction decoder.
     logic reg_write_enable;
     addr_port reg_read_addr_1;
     addr_port reg_read_addr_2;
@@ -47,6 +50,7 @@ interface ProcessorIntf (
     logic mem_reg_write_enable;
     addr_port mem_reg_write_addr;
 
+    // The register file.
     data_port reg_read_data_1;
     data_port reg_read_data_2;
     modport RegMem (
@@ -55,6 +59,7 @@ interface ProcessorIntf (
         output reg_read_data_1, reg_read_data_2
     );
 
+    // ID/EX pipeline registers.
     addr_port id_pc;
     addr_port id_reg_read_addr_1;
     addr_port id_reg_read_addr_2;
@@ -80,6 +85,7 @@ interface ProcessorIntf (
             id_alu_ctrl, id_reg_write_select, id_branch, id_branch_direction, id_branch_offset
     );
 
+    // EX/MEM pipeline registers.
     data_port ex_reg_read_data_2;
     logic ex_reg_write_enable;
     addr_port ex_reg_write_addr;
@@ -102,12 +108,14 @@ interface ProcessorIntf (
             ex_alu_out, ex_zero, ex_pc, ex_branch, ex_branch_direction, ex_branch_offset
     );
 
+    // The data memory.
     data_port data_read_data;
     modport DataMem (
         input clk, ex_data_write_enable, ex_data_read_addr, ex_data_write_addr, ex_reg_read_data_2,
         output data_read_data
     );
 
+    // MEM/WB pipeline registers.
     logic mem_reg_write_select;
     data_port mem_alu_out;
     data_port mem_data_read_data;
@@ -116,6 +124,7 @@ interface ProcessorIntf (
         output mem_reg_write_enable, mem_reg_write_addr, mem_reg_write_select, mem_alu_out, mem_data_read_data
     );
 
+    // WB pipeline registers.
     data_port wb_reg_write_mux_out;
     logic wb_reg_write_enable;
     addr_port wb_reg_write_addr;
@@ -124,6 +133,7 @@ interface ProcessorIntf (
         output wb_reg_write_mux_out, wb_reg_write_enable, wb_reg_write_addr
     );
 
+    // The data hazard control module.
     logic [1:0] forward_1;
     logic [1:0] forward_2;
     logic stall_flag;
